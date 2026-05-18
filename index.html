@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tara Kumar Gajula — Director, AI · MLOps Architect</title>
+<meta name="description" content="Director of AI at Takeda Pharmaceuticals. 25+ years building production AI/ML systems in life sciences, healthcare, and government.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0d0f;
+    --bg2: #111518;
+    --bg3: #181d22;
+    --surface: #1e252c;
+    --surface2: #242c34;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0ede8;
+    --text2: #9ba8b4;
+    --text3: #5f6e7a;
+    --accent: #00d4a1;
+    --accent2: #00a07a;
+    --accent3: rgba(0,212,161,0.08);
+    --gold: #c9a84c;
+    --gold2: rgba(201,168,76,0.1);
+    --red: #e85555;
+    --blue: #4a9eff;
+    --purple: #9b7ff4;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(10,13,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent);
+    color: #000;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 7rem 2.5rem 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-grid-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(rgba(0,212,161,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,161,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent3);
+    border: 1px solid rgba(0,212,161,0.2);
+    border-radius: 100px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name em { color: var(--accent); font-style: italic; }
+  .hero-title {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--text2);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--text2);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-ghost {
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .hero-stat {
+    background: var(--bg2);
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .hero-stat-label {
+    font-size: 0.7rem;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* HERO RIGHT */
+  .hero-right { position: relative; }
+  .hero-terminal {
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+  .terminal-header {
+    background: var(--surface);
+    padding: 0.75rem 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .terminal-dot.r { background: #ff5f57; }
+  .terminal-dot.y { background: #febc2e; }
+  .terminal-dot.g { background: #28c840; }
+  .terminal-title { font-family: var(--mono); font-size: 0.7rem; color: var(--text3); margin-left: auto; }
+  .terminal-body { padding: 1.5rem; font-family: var(--mono); font-size: 0.8rem; line-height: 2; }
+  .t-prompt { color: var(--accent); }
+  .t-key { color: var(--gold); }
+  .t-val { color: var(--text); }
+  .t-str { color: #7ec8a4; }
+  .t-num { color: var(--blue); }
+  .t-arr { color: var(--purple); }
+  .t-comment { color: var(--text3); }
+  .t-cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); vertical-align: text-bottom; animation: blink 1s step-end infinite; }
+  @keyframes blink { 50%{opacity:0} }
+
+  /* SECTION BASE */
+  section { padding: 6rem 2.5rem; max-width: 1300px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--text2);
+    font-size: 1rem;
+    max-width: 560px;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* IMPACT STRIP */
+  .impact-strip {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+  }
+  .impact-item {
+    padding: 1.5rem 2rem;
+    border-right: 1px solid var(--border);
+  }
+  .impact-item:last-child { border-right: none; }
+  .impact-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .impact-label { font-size: 0.85rem; color: var(--text2); }
+  .impact-note { font-family: var(--mono); font-size: 0.7rem; color: var(--text3); margin-top: 0.25rem; }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .skill-card:hover { border-color: rgba(0,212,161,0.3); }
+  .skill-card:hover::before { opacity: 1; }
+  .skill-card-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .skill-card-title { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-tag {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text2);
+  }
+
+  /* PROFICIENCY BARS */
+  .proficiency-section { margin-top: 4rem; }
+  .prof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 4rem; }
+  .prof-item { margin-bottom: 0.5rem; }
+  .prof-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
+  .prof-name { font-size: 0.85rem; color: var(--text2); }
+  .prof-pct { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); }
+  .prof-bar { height: 3px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+  .prof-fill {
+    height: 100%; background: linear-gradient(90deg, var(--accent), var(--blue));
+    border-radius: 2px;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .prof-fill.animate { transform: scaleX(1); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; gap: 1.5rem; }
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(0,212,161,0.04), transparent 60%);
+    pointer-events: none;
+  }
+  .project-card:hover { border-color: rgba(0,212,161,0.25); transform: translateY(-2px); }
+  .project-card.featured { border-color: rgba(0,212,161,0.2); }
+  .project-badge {
+    display: inline-block;
+    background: var(--accent3);
+    border: 1px solid rgba(0,212,161,0.2);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+  }
+  .project-name {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .project-desc { color: var(--text2); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.25rem; }
+  .project-impact {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem; margin-bottom: 1.5rem;
+  }
+  .project-impact-item {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+  .project-impact-num { font-family: var(--serif); font-size: 1.25rem; color: var(--gold); line-height: 1; }
+  .project-impact-label { font-size: 0.65rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-tag {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text3);
+  }
+  .project-links { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; min-width: 100px; }
+  .project-link {
+    display: flex; align-items: center; gap: 0.4rem;
+    color: var(--text3);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: var(--mono);
+    transition: color 0.2s;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .project-link:hover { color: var(--accent); border-color: rgba(0,212,161,0.3); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0.5rem; bottom: 0;
+    width: 1px; background: var(--border2);
+  }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-dot {
+    position: absolute; left: -2.35rem; top: 0.4rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: var(--bg);
+  }
+  .timeline-item.current .timeline-dot { background: var(--accent); box-shadow: 0 0 0 4px rgba(0,212,161,0.15); }
+  .timeline-period {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.35rem;
+  }
+  .timeline-role { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .timeline-company { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.75rem; font-family: var(--mono); }
+  .timeline-bullets { list-style: none; }
+  .timeline-bullets li {
+    padding: 0.35rem 0;
+    padding-left: 1rem;
+    color: var(--text2);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* CERTIFICATIONS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .cert-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: border-color 0.3s;
+  }
+  .cert-card:hover { border-color: var(--border2); }
+  .cert-name { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.35rem; line-height: 1.4; }
+  .cert-org { font-family: var(--mono); font-size: 0.7rem; color: var(--accent2); }
+  .cert-year { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); margin-top: 0.3rem; }
+
+  /* AWARDS */
+  .awards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem; }
+  .award-card {
+    background: var(--gold2);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .award-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .award-name { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem; }
+  .award-org { font-size: 0.75rem; color: var(--text3); }
+
+  /* CHART SECTION */
+  .viz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+  .viz-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .viz-card-title { font-family: var(--mono); font-size: 0.7rem; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+  .chart-wrap { position: relative; height: 220px; }
+
+  /* TECH RADAR */
+  .tech-radar-wrap { position: relative; }
+  .radar-svg { display: block; margin: 0 auto; }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 6rem 2.5rem;
+  }
+  .contact-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); transform: translateX(4px); }
+  .contact-link-icon { font-size: 1.2rem; }
+  .contact-link-text { font-size: 0.9rem; }
+  .contact-link-label { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; }
+  .contact-link-val { font-size: 0.85rem; color: var(--text2); }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 2.5rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text3);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up.d1 { transition-delay: 0.1s; }
+  .fade-up.d2 { transition-delay: 0.2s; }
+  .fade-up.d3 { transition-delay: 0.3s; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 6rem; }
+    .hero-right { display: none; }
+    .impact-strip { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid { grid-template-columns: 1fr; }
+    .prof-grid { grid-template-columns: 1fr; }
+    .projects-grid .project-card { grid-template-columns: 1fr; }
+    .viz-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TKG.dev</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/tarakumar/" target="_blank" class="nav-cta">Open to Roles ↗</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Director, AI · Takeda Pharmaceuticals</div>
+    <h1 class="hero-name">Tara Kumar<br><em>Gajula</em></h1>
+    <p class="hero-title">AI Architect · MLOps Engineer · Life Sciences</p>
+    <p class="hero-desc">
+      25+ years building production AI/ML systems in pharma, healthcare, and government.
+      Agentic AI, regulated MLOps (21 CFR Part 11), and enterprise data platforms at scale.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/gajulatarak" target="_blank" class="btn-primary">View GitHub</a>
+      <a href="https://www.linkedin.com/in/tarakumar/" target="_blank" class="btn-ghost">LinkedIn →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label">Years in AI/ML</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-label">Analysts Served</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$75M+</div>
+        <div class="hero-stat-label">Portfolio Managed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dot r"></div>
+        <div class="terminal-dot y"></div>
+        <div class="terminal-dot g"></div>
+        <div class="terminal-title">profile.json</div>
+      </div>
+      <div class="terminal-body">
+        <div><span class="t-prompt">➜</span> <span style="color:var(--text3)">cat</span> profile.json</div>
+        <div>{</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-str">"Tara Kumar Gajula"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-str">"Director, AI in R&D"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"company"</span>: <span class="t-str">"Takeda Pharmaceuticals"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"experience_years"</span>: <span class="t-num">25</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"specializations"</span>: <span class="t-arr">[</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Agentic AI & LangChain"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"MLOps & 21 CFR Part 11"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Knowledge Graphs"</span>,</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Life Sciences AI"</span></div>
+        <div>&nbsp;&nbsp;<span class="t-arr">]</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"current_project"</span>: <span class="t-str">"BioDev Platform"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"i140_approved"</span>: <span style="color:var(--blue)">true</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"open_to_roles"</span>: <span style="color:var(--blue)">true</span></div>
+        <div>} <span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IMPACT STRIP -->
+<div class="impact-strip">
+  <div class="impact-item">
+    <div class="impact-num">3mo→2wk</div>
+    <div class="impact-label">ML model release cycle</div>
+    <div class="impact-note">Databricks + SageMaker MLOps</div>
+  </div>
+  <div class="impact-item">
+    <div class="impact-num">$50K→$0</div>
+    <div class="impact-label">Per-compound ADMET cost</div>
+    <div class="impact-note">DataFoundry platform</div>
+  </div>
+  <div class="impact-item">
+    <div class="impact-num">Weeks→Hrs</div>
+    <div class="impact-label">Clinical data access time</div>
+    <div class="impact-note">APCDL Data Lake, 200+ analysts</div>
+  </div>
+  <div class="impact-item">
+    <div class="impact-num">92/100</div>
+    <div class="impact-label">FAIR AI readiness score</div>
+    <div class="impact-note">DataFoundry governance</div>
+  </div>
+</div>
+
+<!-- VISUALIZATION SECTION -->
+<section id="skills">
+  <div class="fade-up">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">The Stack That Ships</h2>
+    <p class="section-sub">Proficiency built over 25+ years of production delivery across regulated industries.</p>
+  </div>
+
+  <div class="viz-grid fade-up d1">
+    <div class="viz-card">
+      <div class="viz-card-title">Core Proficiency</div>
+      <div class="chart-wrap">
+        <canvas id="radarChart" role="img" aria-label="Radar chart showing core proficiency levels across AI/ML domains"></canvas>
+      </div>
+    </div>
+    <div class="viz-card">
+      <div class="viz-card-title">Domain Experience (years)</div>
+      <div class="chart-wrap">
+        <canvas id="domainChart" role="img" aria-label="Bar chart showing years of experience across different domains"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-grid fade-up d2">
+    <div class="skill-card">
+      <div class="skill-card-icon">🤖</div>
+      <div class="skill-card-title">Agentic AI & LLMs</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">LangGraph</span>
+        <span class="skill-tag">Multi-Agent</span>
+        <span class="skill-tag">GraphRAG</span>
+        <span class="skill-tag">RAG Pipelines</span>
+        <span class="skill-tag">GPT-4o</span>
+        <span class="skill-tag">HITL Workflows</span>
+        <span class="skill-tag">MCP</span>
+        <span class="skill-tag">Vector DBs</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">⚙️</div>
+      <div class="skill-card-title">MLOps & Compliance</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MLflow</span>
+        <span class="skill-tag">Databricks</span>
+        <span class="skill-tag">SageMaker</span>
+        <span class="skill-tag">21 CFR Part 11</span>
+        <span class="skill-tag">GxP Audit Trails</span>
+        <span class="skill-tag">Model Registry</span>
+        <span class="skill-tag">CI/CD ML</span>
+        <span class="skill-tag">Model Lineage</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">☁️</div>
+      <div class="skill-card-title">Cloud & Data Platforms</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS Neptune</span>
+        <span class="skill-tag">ECS Fargate</span>
+        <span class="skill-tag">S3 WORM</span>
+        <span class="skill-tag">Delta Lake</span>
+        <span class="skill-tag">Apache Iceberg</span>
+        <span class="skill-tag">Kafka</span>
+        <span class="skill-tag">Redshift</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">FastAPI</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">🧬</div>
+      <div class="skill-card-title">Life Sciences AI</div>
+      <div class="skill-tags">
+        <span class="skill-tag">ADMET Prediction</span>
+        <span class="skill-tag">RDKit</span>
+        <span class="skill-tag">ChEMBL</span>
+        <span class="skill-tag">PubChem</span>
+        <span class="skill-tag">ClinicalTrials.gov</span>
+        <span class="skill-tag">FAIR Governance</span>
+        <span class="skill-tag">Cheminformatics</span>
+        <span class="skill-tag">Drug Discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFICIENCY BARS -->
+  <div class="proficiency-section fade-up d3">
+    <div class="prof-grid" id="profGrid">
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Python & FastAPI</span><span class="prof-pct">98%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.98"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Agentic AI (LangChain, MCP)</span><span class="prof-pct">95%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.95"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Knowledge Graphs & RAG</span><span class="prof-pct">92%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.92"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">MLOps & GxP Compliance</span><span class="prof-pct">90%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.90"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">AWS Cloud Architecture</span><span class="prof-pct">88%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.88"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Life Sciences Domain</span><span class="prof-pct">88%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.88"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Databricks & Delta Lake</span><span class="prof-pct">87%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.87"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Data Mesh & Fabric</span><span class="prof-pct">85%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--pct:0.85"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="work">
+  <div class="fade-up">
+    <div class="section-label">Production Work</div>
+    <h2 class="section-title">Systems at Scale</h2>
+    <p class="section-sub">Production AI/ML platforms deployed in regulated pharma environments — from design through compliance.</p>
+  </div>
+
+  <div class="projects-grid">
+    <!-- BioDev -->
+    <div class="project-card featured fade-up d1">
+      <div>
+        <div class="project-badge">🔬 Live at Takeda · Production</div>
+        <h3 class="project-name">BioDev Platform</h3>
+        <p class="project-desc">
+          Multi-agent pharma R&D AI system deployed at Takeda Pharmaceuticals. 5-agent LangChain orchestrator with live Knowledge Graph on AWS Neptune, 11-property ADMET prediction models, GxP-compliant audit trail (S3 WORM, 7-year retention), HITL review queue, and full infrastructure-as-code via Terraform on ECS Fargate. Live data from ClinicalTrials.gov, ChEMBL, PubChem, and OpenFDA.
+        </p>
+        <div class="project-impact">
+          <div class="project-impact-item">
+            <div class="project-impact-num">5</div>
+            <div class="project-impact-label">Specialist Agents</div>
+          </div>
+          <div class="project-impact-item">
+            <div class="project-impact-num">11</div>
+            <div class="project-impact-label">ADMET Properties</div>
+          </div>
+          <div class="project-impact-item">
+            <div class="project-impact-num">7yr</div>
+            <div class="project-impact-label">GxP Retention</div>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">LangChain</span>
+          <span class="project-tag">AWS Neptune</span>
+          <span class="project-tag">RDKit</span>
+          <span class="project-tag">Terraform</span>
+          <span class="project-tag">ECS Fargate</span>
+          <span class="project-tag">21 CFR Part 11</span>
+          <span class="project-tag">AutoML</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/gajulatarak/BioDevPlatform" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- DataFoundry -->
+    <div class="project-card fade-up d2">
+      <div>
+        <div class="project-badge">🏗️ Enterprise · Life Sciences</div>
+        <h3 class="project-name">DataFoundry</h3>
+        <p class="project-desc">
+          Four-pillar drug discovery data platform. Medallion data lake architecture, semantic Knowledge Graph with 6 node and 7 edge types, federated search across ChEMBL, PubChem, ELN, and LIMS. Five live ADMET prediction models at sub-50ms latency, LangChain HITL science agent, FAIR data governance scoring 92/100, and 30+ FastAPI endpoints.
+        </p>
+        <div class="project-impact">
+          <div class="project-impact-item">
+            <div class="project-impact-num">&lt;50ms</div>
+            <div class="project-impact-label">ADMET Latency</div>
+          </div>
+          <div class="project-impact-item">
+            <div class="project-impact-num">$50K→$0</div>
+            <div class="project-impact-label">Compound Cost</div>
+          </div>
+          <div class="project-impact-item">
+            <div class="project-impact-num">30+</div>
+            <div class="project-impact-label">API Endpoints</div>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Python 3.12</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Knowledge Graphs</span>
+          <span class="project-tag">Kafka</span>
+          <span class="project-tag">GPT-4o</span>
+          <span class="project-tag">FAIR Governance</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/gajulatarak/DataFoundry" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- Agentic Feedback System -->
+    <div class="project-card fade-up d3">
+      <div>
+        <div class="project-badge">🔄 Framework · Open Source</div>
+        <h3 class="project-name">Agentic Feedback System</h3>
+        <p class="project-desc">
+          Production-ready multi-agent feedback loop framework. Agents evaluate, critique, and iteratively improve outputs in closed feedback loops — enabling self-correcting AI workflows. Demonstrates advanced LangChain patterns for autonomous agent collaboration and continuous improvement cycles.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">LangChain</span>
+          <span class="project-tag">LLM APIs</span>
+          <span class="project-tag">Async Orchestration</span>
+          <span class="project-tag">Agent Patterns</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/gajulatarak/agentic_feedback_system" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+
+    <!-- MLOpsEngine -->
+    <div class="project-card fade-up d1">
+      <div>
+        <div class="project-badge">⚙️ Infrastructure · MLOps</div>
+        <h3 class="project-name">MLOpsEngine</h3>
+        <p class="project-desc">
+          Enterprise MLOps framework that cut ML model release cycles from 3–6 months to 2–3 weeks. Implements CI/CD for ML, model registry, lineage tracking, and GxP-compliant deployment pipelines on Databricks and SageMaker.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">MLflow</span>
+          <span class="project-tag">Databricks</span>
+          <span class="project-tag">SageMaker</span>
+          <span class="project-tag">CI/CD</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/gajulatarak/MLOpsEngine" target="_blank" class="project-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CAREER -->
+<section id="career">
+  <div class="fade-up">
+    <div class="section-label">Experience</div>
+    <h2 class="section-title">25 Years, One Thread</h2>
+    <p class="section-sub">From software engineer at India's Ministry of Defence to Director of AI at Takeda Pharmaceuticals.</p>
+  </div>
+
+  <!-- Career timeline chart -->
+  <div class="viz-card fade-up d1" style="margin-bottom: 3rem;">
+    <div class="viz-card-title">Career Progression</div>
+    <div style="position:relative; height: 180px;">
+      <canvas id="careerChart" role="img" aria-label="Timeline chart showing career progression from 1997 to present"></canvas>
+    </div>
+  </div>
+
+  <div class="timeline fade-up d2">
+    <div class="timeline-item current">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Nov 2022 – Present</div>
+      <div class="timeline-role">Director, Data Solutions Architect — R&D Technology Services</div>
+      <div class="timeline-company">Takeda Pharmaceuticals</div>
+      <ul class="timeline-bullets">
+        <li>Designed & deployed BioDev — production Agentic AI with 5-agent LangChain orchestrator, AWS Neptune Knowledge Graph, 11-property ADMET prediction, 21 CFR Part 11 GxP audit trail</li>
+        <li>Built enterprise MLOps framework on Databricks & SageMaker — cut model release cycles from 3–6 months to 2–3 weeks</li>
+        <li>Owned APCDL Clinical Data Lake — Data Mesh/Lakehouse serving 200+ analysts; reduced data access from weeks to hours</li>
+        <li>Defined Enterprise Data Strategy — CDO roadmap, Technical Review Board, $75M+ vendor portfolio management</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">May 2021 – Oct 2022</div>
+      <div class="timeline-role">Lead Data Architect</div>
+      <div class="timeline-company">New York State – Pronix Inc</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Sep 2020 – May 2021</div>
+      <div class="timeline-role">Sr. Cloud Data Solutions Architect</div>
+      <div class="timeline-company">Vanguard – Pronix Inc</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Aug 2016 – Aug 2020</div>
+      <div class="timeline-role">Sr. Data Architect & Technical Manager</div>
+      <div class="timeline-company">NY State Dept of Health – Pronix Inc</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Oct 2015 – Aug 2016</div>
+      <div class="timeline-role">Sr. BI & Big Data Consultant, Lead Architect</div>
+      <div class="timeline-company">IQVIA / IMS Health – Pronix Inc</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Jun 2006 – Sep 2015</div>
+      <div class="timeline-role">BI Lead Architect / Pre-Sales Architect</div>
+      <div class="timeline-company">CenturyLink · Windstream · Prodapt</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">1997 – 2006</div>
+      <div class="timeline-role">Senior Software Engineer</div>
+      <div class="timeline-company">Ministry of Defence, India · Sreenidhi Institute · ECIL</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="fade-up">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications & Awards</h2>
+  </div>
+
+  <div class="certs-grid fade-up d1">
+    <div class="cert-card">
+      <div class="cert-name">Chief Data & AI Officer (CDAIO)</div>
+      <div class="cert-org">Carnegie Mellon University</div>
+      <div class="cert-year">2026</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Data Science & Machine Learning</div>
+      <div class="cert-org">MIT</div>
+      <div class="cert-year">2022–2023</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
+      <div class="cert-org">Amazon Web Services</div>
+      <div class="cert-year"></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">AI Agent Fundamentals</div>
+      <div class="cert-org">Databricks</div>
+      <div class="cert-year">Nov 2025</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Building RAG Agents with LlamaIndex</div>
+      <div class="cert-org">NVIDIA</div>
+      <div class="cert-year"></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Generative AI with LLMs</div>
+      <div class="cert-org">DeepLearning.AI</div>
+      <div class="cert-year"></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Generative AI Fundamentals</div>
+      <div class="cert-org">Databricks</div>
+      <div class="cert-year">Jan 2025</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">PMI Project Management Professional (PMP)</div>
+      <div class="cert-org">PMI</div>
+      <div class="cert-year"></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Leadership Series (4 courses)</div>
+      <div class="cert-org">Northwestern University (Kellogg)</div>
+      <div class="cert-year"></div>
+    </div>
+  </div>
+
+  <div class="awards-grid fade-up d2">
+    <div class="award-card">
+      <div class="award-icon">🥇</div>
+      <div class="award-name">First Prize — Takeda Real-world Datathon 3.0</div>
+      <div class="award-org">AI in Healthcare · 2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div class="award-name">Bio-IT World Innovative Practices Award</div>
+      <div class="award-org">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">📋</div>
+      <div class="award-name">Named Contributor — Pistoia Alliance FAIR Maturity Matrix</div>
+      <div class="award-org">International Recognition</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">⭐</div>
+      <div class="award-name">Best Performance Award</div>
+      <div class="award-org">Ministry of Defence, Govt. of India · 2006</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">Open to Opportunities</div>
+      <h2 class="section-title" style="margin-bottom:1rem;">Let's Build<br><em style="font-style:italic; color:var(--accent)">Something Serious</em></h2>
+      <p style="color:var(--text2); font-size:0.95rem; line-height:1.8; max-width: 440px;">
+        Seeking Director-level or Principal Engineer roles in AI/ML platforms, agentic systems, or life sciences data engineering. If your organization is serious about production-grade, regulated AI deployment — let's talk.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="https://github.com/gajulatarak" target="_blank" class="contact-link">
+        <div class="contact-link-icon">⌥</div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">github.com/gajulatarak</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/tarakumar/" target="_blank" class="contact-link">
+        <div class="contact-link-icon">◈</div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">linkedin.com/in/tarakumar</div>
+        </div>
+      </a>
+      <a href="mailto:gajulatarak@gmail.com" class="contact-link">
+        <div class="contact-link-icon">✉</div>
+        <div class="contact-link-text">
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">gajulatarak@gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Tara Kumar Gajula · Director, AI in R&D · Built with precision, not templates</p>
+</footer>
+
+<!-- CHART.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+// RADAR CHART
+const radarCtx = document.getElementById('radarChart').getContext('2d');
+new Chart(radarCtx, {
+  type: 'radar',
+  data: {
+    labels: ['Agentic AI', 'MLOps', 'Cloud Arch', 'Data Mesh', 'Life Sciences', 'Knowledge Graphs'],
+    datasets: [{
+      label: 'Proficiency',
+      data: [95, 90, 88, 85, 88, 92],
+      backgroundColor: 'rgba(0,212,161,0.12)',
+      borderColor: '#00d4a1',
+      borderWidth: 2,
+      pointBackgroundColor: '#00d4a1',
+      pointRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: {
+        min: 0, max: 100,
+        ticks: { display: false, stepSize: 25 },
+        grid: { color: 'rgba(255,255,255,0.06)' },
+        angleLines: { color: 'rgba(255,255,255,0.06)' },
+        pointLabels: { color: '#9ba8b4', font: { size: 11, family: "'DM Mono', monospace" } }
+      }
+    }
+  }
+});
+
+// DOMAIN CHART
+const domainCtx = document.getElementById('domainChart').getContext('2d');
+new Chart(domainCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Life Sciences', 'Government', 'Financial', 'Healthcare', 'Defense'],
+    datasets: [{
+      label: 'Years',
+      data: [4, 6, 3, 4, 9],
+      backgroundColor: ['#00d4a1','#00a07a','#007a5c','#005a44','#4a9eff'],
+      borderWidth: 0,
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#9ba8b4', font: { size: 10 } } },
+      y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#9ba8b4', font: { size: 10 } }, min: 0 }
+    }
+  }
+});
+
+// CAREER TIMELINE CHART
+const careerCtx = document.getElementById('careerChart').getContext('2d');
+new Chart(careerCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Defence/Academia', 'CenturyLink/Windstream', 'IQVIA', 'NY Health (Pronix)', 'Vanguard', 'NY State Arch', 'Takeda'],
+    datasets: [{
+      label: 'Duration (years)',
+      data: [9, 9.5, 1, 4, 0.75, 1.5, 3],
+      backgroundColor: [
+        '#5f6e7a','#5f6e7a','#5f6e7a','#007a5c','#007a5c','#007a5c','#00d4a1'
+      ],
+      borderWidth: 0, borderRadius: 4,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#9ba8b4', font: { size: 10 } }, title: { display: true, text: 'Years', color: '#5f6e7a', font: { size: 10 } } },
+      y: { grid: { display: false }, ticks: { color: '#9ba8b4', font: { size: 10 } } }
+    }
+  }
+});
+
+// INTERSECTION OBSERVER for animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      if (entry.target.id === 'profGrid') {
+        setTimeout(() => {
+          document.querySelectorAll('.prof-fill').forEach((el, i) => {
+            setTimeout(() => {
+              const pct = el.style.getPropertyValue('--pct');
+              el.style.width = (parseFloat(pct) * 100) + '%';
+              el.classList.add('animate');
+            }, i * 80);
+          });
+        }, 200);
+      }
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.prof-fill').forEach(el => {
+  const pct = el.style.getPropertyValue('--pct') || 0.5;
+  el.style.setProperty('--width', (parseFloat(pct) * 100) + '%');
+});
+
+// Animate proficiency bars on scroll
+const profObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.prof-fill').forEach((el, i) => {
+        const pct = parseFloat(el.style.getPropertyValue('--pct') || 0.5);
+        el.style.width = (pct * 100) + '%';
+        setTimeout(() => el.classList.add('animate'), i * 80);
+      });
+      profObserver.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+const profGrid = document.getElementById('profGrid');
+if (profGrid) profObserver.observe(profGrid);
+</script>
+
+</body>
+</html>
